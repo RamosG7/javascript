@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            background: rgb(42, 139, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area"><!-- onClick() onmouseenter() onmouseout() são formas de disparar as functions direto no HTML -->
+        interaja...
+    </div>
+
+    <script>
+        var a = window.document.getElementById('area')//var fora da funcion para que funcione em outras
+        a.addEventListener('click', clicar)//aqui ele observa o evento sendo executado e dispara-o
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){
+            a.innerHTML = 'Clicou!'
+            a.style.background = 'red'
+        }
+
+        function entrar(){
+             a.innerHTML = 'Entrou!'
+             a.style.background = 'blue'
+        }
+
+        function sair(){
+            a.innerHTML = 'Saiu!'
+            a.style.background = 'black'
+        }
+    </script>
+</body>
+</html>
