@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nacionalidade</title>
+    <style>
+        input{
+            text-transform: capitalize;/*transforma a primeira letra em maiúscula*/
+        }
+    </style>
 </head>
 <body>
     <h1>Verificando Nacionalidade</h1>
-    Digite em qual país você reside :<input type="text" name="txtnac" id="txtnac" autocomplete="off" required placeholder="1° letra maiúscula EX.:Chile">
+    Digite em qual país você reside :<input type="text" name="txtnac" id="txtnac" autocomplete="off" required placeholder="EX.:Chile">
     <input type="button" value="Verificar" onclick="procurar()">
     <div id="res">
 
@@ -18,9 +23,9 @@
             var txtn = window.document.querySelector('input#txtnac')//recebe o input
             var res = window.document.querySelector('div#res')//recebe a div res
             var nac = (txtn.value)//recebe o valor digitado no input
-            res.innerHTML = `<p>A sua Nacionalidade é <strong>${nac}</strong>.</p>`
+            res.innerHTML = `<p>A sua Nacionalidade é <strong>${nac.toUpperCase()}</strong>.</p>`
             if (nac == 'Brasil') {
-                res.innerHTML += `<p>Olha só então você é um <strong>brasileiro</strong>!</p>`
+                res.innerHTML += `<p>Olha só, então você é um <strong>brasileiro</strong>!</p>`
             } else {
                 res.innerHTML += `<p>Então você é um <strong>estrangeiro</strong>!</p>`
             }
