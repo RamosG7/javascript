@@ -1,5 +1,5 @@
-var agora = new Date()
-var diaSem = agora.getDay()
+var agora = new Date()//pega o dia atual do sistema como valor
+var diaSem = agora.getDay()//recebe o dia
 /*
 0- Domingo
 1- Segunda
